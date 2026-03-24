@@ -43,6 +43,9 @@ jobs:
             git clone --depth 1 "$GIT_REPO" target-repo
           fi
 
+      - name: Show current commit of cloned repository
+        run: git -C target-repo rev-parse HEAD
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
